@@ -1,0 +1,33 @@
+{
+  "name": "fastpress/fastpress",
+  "description": "FastPress, Fast PHP Micro Framework",
+  "keywords": [
+    "php framework",
+    "micro framework",
+    "php fastpress"
+  ],
+  "homepage": "https://github.com/fastpress/fastpress",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Daniel, S.",
+      "email": "eritr3a@gmail.com",
+      "role": "Creator / Developer"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0"
+  },
+  "suggest":{
+    "samayo/autolog": "For Logging Error and sending information"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.6.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Fastpress\\": "src/lib",
+      "App\\": "src/app"
+    }
+  }
+}
