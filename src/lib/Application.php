@@ -21,6 +21,12 @@ class Application
         $this->router->get($path, $resource);
     }
 
+    public function post($path, $resource){
+
+        $this->router->post($path, $resource);
+    }
+
+
     public function run()
     {
         $request = ServerRequestFactory::fromGlobals();

@@ -63,27 +63,18 @@ class Router{
         array_push($this->routes[$method], [$path => $handler]);
     }
 
-//    public function match(ServerRequestInterface $request) {
-//        $request->getMethod();
-//    }
-
-//    public function match(array $server = [], array $post){
     public function match(ServerRequestInterface $request){
-//        $requestMethod = $server['REQUEST_METHOD'];
-//        $requestUri    = $server['REQUEST_URI'];
         $requestMethod = $request->getMethod();
         $requestUri = $request->getUri()->getPath();
-//        $restMethod = $this->getRestfullMethod($post);
+        $restMethod = $this->getRestfullMethod($request);
 
-        #@TODO: Implement REST method. 
+        #@TODO: Implement REST method.
 
-//        if (!$restMethod && !in_array($requestMethod, array_keys($this->routes))) {
-        if (!in_array($requestMethod, array_keys($this->routes))) {
+        if (!$restMethod && !in_array($requestMethod, array_keys($this->routes))) {
             return FALSE;
         }
 
-//        $method = $restMethod ?: $requestMethod;
-        $method = $requestMethod;
+        $method = $restMethod ?: $requestMethod;
 
         foreach ($this->routes[$method]  as $resource) {
 
@@ -105,12 +96,12 @@ class Router{
                 return ['controller' => $ctrl, 'method' => $method, 'args' => $args];
             }
 
-            if(empty($args)){
-                return $handler();
+            if (empty($args)){
+                return $handler($request);
             }
 
             #TODO: pass app by func array_push($args, $this);
-            return call_user_func_array($handler, $args);
+            return call_user_func_array($handler, array($request));
 
         }
 
