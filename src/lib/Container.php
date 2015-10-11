@@ -29,7 +29,7 @@ use Fastpress\Autolog as Autolog;
 class Container implements \ArrayAccess{
     protected $container = array();
     
-  public function __construct($conf){
+    public function __construct($conf){
 		$app = $this; 
         
         if(file_exists($conf)){
@@ -57,10 +57,29 @@ class Container implements \ArrayAccess{
         $this['session'] = $this->store(function($conf){
             return new Session($conf['app.session']);
         });
+    }
 
 
+    public function route(){
+        return new Router; 
+    }
 
+    public function view(){
+        $conf = $this->container; 
+        return new Template($conf);
+    }
 
+    public function response(){
+        return new Response; 
+    }
+
+    public function request(){
+        return new Request($_GET, $_POST, $_FILES, $_SERVER, $_COOKIE); 
+    }
+
+    public function session(){
+        $conf = $this->container['app.session'];
+        return new Session($conf); 
     }
 
     public function offsetUnset($offset){}
@@ -86,7 +105,6 @@ class Container implements \ArrayAccess{
         
         $this->container[$offset] = $value;
     }
-
 
     public  function store(Callable $callable){
         return function () use ($callable){

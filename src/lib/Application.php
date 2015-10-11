@@ -28,23 +28,33 @@ Class Application extends Container{
     }
     
     public function server($var, $filter = NULL){
-        return $this['request']->server($var, $filter);
+        $request = new Request();
+        return $request->server($var, $filter);
+        #return $this['request']->server($var, $filter);
     }
 
     public function isGet(){
-        return $this['request']->isGet();  
+        $request = new Request($_GET, $_POST, $_FILES, $_SERVER, $_COOKIE);
+        return $request->isGet();
+        #return $this['request']->isGet();  
     }
     
     public function isPost(){
-        return $this['request']->isPost();
+        $request = new Request($_GET, $_POST, $_FILES, $_SERVER, $_COOKIE);
+        return $request->isPost();
+        #return $this['request']->isPost();
     }
     
     public function isPut(){
-        return $this['request']->isPut(); 
+        $request = new Request($_GET, $_POST, $_FILES, $_SERVER, $_COOKIE);
+        return $request->isPut();
+        #return $this['request']->isPut(); 
     }
     
     public function isDelete(){
-        return $this['request']->isDelete();
+        $request = new Request($_GET, $_POST, $_FILES, $_SERVER, $_COOKIE);
+        return $request->isDelete();
+        #return $this['request']->isDelete();
     }
 
     public function app($key, $value = null){
@@ -56,45 +66,53 @@ Class Application extends Container{
     }
 
     public function setResponse($header = 200, $statusText = null){
-         $this['response']->setResponse($header, $statusText);
+        $request = new Response();
+        return $request->setResponse($header, $statusText);
+        #$this['response']->setResponse($header, $statusText);
     }
 
     public function getVar($value, $filter = null){
-		return $this['request']->get($value, $filter); 
+        $request = new Request($_GET, $_POST, $_FILES, $_SERVER, $_COOKIE);
+        $request->get($value, $filter);
+        #return $this['request']->get($value, $filter); 
     }
 
     public function postVar($value, $filter = null){
-        return $this['request']->post($value, $filter); 
+        $request = new Request($_GET, $_POST, $_FILES, $_SERVER, $_COOKIE);
+        $request->post($value, $filter);
+        #return $this['request']->post($value, $filter); 
     }
 
     public function any($path, $resource){
-
-            $this->isBooted = TRUE;
- 
-         return $this['route']->any($path, $resource);
+        $this->isBooted = TRUE;
+        $router = new Router; 
+        return $router->any($path, $resource);
+        #return $this['route']->any($path, $resource);
     }
 
     public function get($path, $resource){
-        
-            $this->isBooted = TRUE;
-        
-
-         return $this['route']->get($path, $resource);
+        $this->isBooted = TRUE;
+        $router = new Router;
+        return $router->get($path, $resource);
+        #return $this['route']->get($path, $resource);
     }
 
     public function post($path, $resource){
-        
-         return $this['route']->post($path, $resource);
+        $router = new Router; 
+        return $router->post($path, $resource);
+        #return $this['route']->post($path, $resource);
     }
 
     public function put($path, $resource){
-       
-         return $this['route']->put($path, $resource);
+        $router = new Router; 
+        return $router->put($path, $resource);
+        #return $this['route']->put($path, $resource);
     }
 
     public function delete($path, $resource){
-        
-         return $this['route']->delete($path, $resource);
+        $router = new Router; 
+        return $router->delete($path, $resource);
+        #return $this['route']->delete($path, $resource);
     }
 
 
@@ -110,7 +128,7 @@ Class Application extends Container{
             if(!method_exists($controller, $method)){
                 throw new \Exception("method $method does not exists in $fullyQualifiedServiceName"); 
             }else{
-            	(new $controller)->$method($args, $this);
+                (new $controller)->$method($args, $this);
             }
         }else{
             throw new \Exception("controller $controller does not exist");
@@ -119,16 +137,21 @@ Class Application extends Container{
     }
 
     public function view($block, array $variables = []){
-        $this['view']->view($block, $variables);
+        $view = new Template($this); 
+        $view->view($path, $resource);
+        #$this['view']->view($block, $variables);
     }
 
     public function layout($layout, array $variables = []){
-        $this['view']->layout($layout, $variables);
+        $view = new Template($this);
+        $view->layout($layout, $variables); 
+        #$this['view']->layout($layout, $variables);
     }
 
     public function run(){
-		$resource = $this['route']->match($_SERVER, $_POST);  
-   
+        $router = new Router; 
+        $resource = $router->match($_SERVER, $_POST); 
+        #$resource = $this['route']->match($_SERVER, $_POST);  
         if(is_array($resource)){
             $this->controllerDipatcher($resource);
         }
