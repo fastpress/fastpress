@@ -16,8 +16,7 @@
     }
   ],
   "require": {
-    "php": ">=5.4.0",
-    "zendframework/zend-diactoros": "^1.1"
+    "php": ">=5.4.0"
   },
   "suggest":{
     "samayo/autolog": "For Logging Error and sending information"
