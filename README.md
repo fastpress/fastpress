@@ -96,18 +96,12 @@ $app["page"] = [
    "image"        => __HOST__ . "/images/thumbnail.png"
 ];
 
-
 // database details 
 $app["database"] = [
-   "driver"     => "mysql",
-   "host"       => "localhost",
-   "database"   => "",
-   "username"   => "",
-   "password"   => "",
-   "charset"    => "utf8",
-   "collation"  => "utf8_unicode_ci",
-   "prefix"     => "",
+  // database config
 ];
+
+// .. more configs
 ```
 You can use the `$app->app()` method to add/override any these configs in your app.
 ```php
