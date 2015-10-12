@@ -1,34 +1,32 @@
 {
     "name": "fastpress/fastpress",
-    "description": "FastPress, Fast PHP Micro Framework",
+    "description": "Fast PHP blogging app",
     "keywords": [
-        "php framework",
-        "micro framework",
-        "php fastpress"
+        "php blog",
+        "blog app",
+        "fastpress"
     ],
     "homepage": "https://github.com/fastpress/fastpress",
     "license": "MIT", 
     "authors": [
         {
-        "name": "Daniel, S.",
+        "name": "Simon Daniel",
         "email": "eritr3a@gmail.com",
         "role": "Creator / Developer"
         }
     ],
     "require": {
         "php": ">=5.4.0", 
-        "fastpress/core" : "v0.1.0"
-    },
-    "suggest":{
-        "samayo/autolog": "For Logging Error and sending information"
+        "fastpress/torpedo" : "0.1.*"
     },
     "require-dev": {
         "phpunit/phpunit": "4.6.*"
     },
     "autoload": {
         "psr-4": {
-                "Fastpress\\": "vendor/fastpress/core/src/",
-                "App\\Model\\": "src/app/model/"
+                "Fastpress\\": "vendor/torpedo/lib/",
+                "App\\Model\\": "src/app/model/", 
+                "App\\Controller": "src/app/controller/"
         }
     }
 }
