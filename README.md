@@ -1,6 +1,7 @@
 # fastpress 
 
 Fastpress is ultra-fast and simple blogging app made primarly for developers
+I'm here to ruin your pull request
 
 Install
 -----
