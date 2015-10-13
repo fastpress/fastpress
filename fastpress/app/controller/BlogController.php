@@ -2,8 +2,8 @@
 
 namespace App\Controller; 
 
-class BlogController{
-	public function slug($args, $app){
-		echo 'URL is /mvc/'. $args[0];
+class DefaultController{
+	public function index($args, $app){
+		echo 'Yeah, MVC request works';
 	}
 }
