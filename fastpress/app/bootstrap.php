@@ -9,6 +9,7 @@ require __DIR__ . "/../../vendor/autoload.php";
 session_start();
 
 $conf =  __DIR__ . "/conf.dev.php";
+var_dump(class_exists('\Torpedo\Application'));
 $app = new Fastpress\Application($conf);
 
 
