@@ -5,7 +5,9 @@ New, Experimental and Fast PHP blogging app.
 Install
 ----
 #### composer
-To get fastpress quicker along its dependancies, run this composer command.
+Use composer to install fastpress and require the dependancies
 ```bash
-$ composer create-project fastpress/fastpress:0.1.*
+$ composer create-project fastpress/fastpress:"dev-master"
+$ cd fastpress
+$ update composer
 ```
