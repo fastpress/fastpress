@@ -17,7 +17,7 @@
    ],
    "require":{
       "php":">=5.6",
-      "fastpress/torpedo":"0.1.*"
+      "fastpress/torpedo":"dev-master"
    },
    "config":{
       "optimize-autoloader":true
