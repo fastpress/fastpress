@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b0f3e3c35df2ba37b84b27557cd110a5",
+    "hash": "42e942053baff90dc1d3b4e057549915",
     "packages": [
         {
             "name": "fastpress/torpedo",
-            "version": "v0.1.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fastpress/torpedo.git",
-                "reference": "705803e2a556c3884a126e6318c3a0cd5b3a4565"
+                "reference": "e325768be9889150dcc9d2eddadb520a0270c003"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fastpress/torpedo/zipball/705803e2a556c3884a126e6318c3a0cd5b3a4565",
-                "reference": "705803e2a556c3884a126e6318c3a0cd5b3a4565",
+                "url": "https://api.github.com/repos/fastpress/torpedo/zipball/e325768be9889150dcc9d2eddadb520a0270c003",
+                "reference": "e325768be9889150dcc9d2eddadb520a0270c003",
                 "shasum": ""
             },
             "require": {
@@ -30,6 +30,11 @@
                 "fastpress/fastpress": "A fast PHP blogging app made with fastpress/Torpedo"
             },
             "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Torpedo\\": "lib"
+                }
+            },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
@@ -48,7 +53,7 @@
                 "php framework",
                 "php torpedo"
             ],
-            "time": "2015-10-12 12:25:39"
+            "time": "2015-10-13 18:32:23"
         }
     ],
     "packages-dev": [
@@ -1092,7 +1097,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "fastpress/torpedo": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
