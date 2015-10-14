@@ -1,3 +1,7 @@
+checks:
+    php:
+        code_rating: true
+        duplication: true
 tools:
     php_code_coverage:
         test_command: "phpunit -c test/"
