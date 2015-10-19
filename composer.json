@@ -1,6 +1,6 @@
 {
    "name":"fastpress/fastpress",
-   "description":"Fast PHP blogging app",
+   "description":"fast and simple php blogging application",
    "keywords":[
       "php blog",
       "blog app",
@@ -17,7 +17,7 @@
    ],
    "require":{
       "php":">=5.6",
-      "fastpress/torpedo":"dev-master"
+      "fastpress/framework":"dev-master"
    },
    "config":{
       "optimize-autoloader":true
@@ -27,8 +27,8 @@
    },
    "autoload":{
       "psr-4":{
-         "App\\Model\\":"fastpress/app/model/",
-         "App\\Controller\\":"fastpress/app/controller/"
+         "App\\Model\\":"src/app/model/",
+         "App\\Controller\\":"src/app/controller/"
       }
    }
 }

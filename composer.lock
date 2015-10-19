@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "42e942053baff90dc1d3b4e057549915",
+    "hash": "5853e89f7ac4ee419ce4d417f4bd10dc",
     "packages": [
         {
-            "name": "fastpress/torpedo",
+            "name": "fastpress/framework",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/fastpress/torpedo.git",
-                "reference": "e325768be9889150dcc9d2eddadb520a0270c003"
+                "url": "https://github.com/fastpress/framework.git",
+                "reference": "b714aafa7c6865bcaf8b7e7bd2d0862318ed75c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fastpress/torpedo/zipball/e325768be9889150dcc9d2eddadb520a0270c003",
-                "reference": "e325768be9889150dcc9d2eddadb520a0270c003",
+                "url": "https://api.github.com/repos/fastpress/framework/zipball/b714aafa7c6865bcaf8b7e7bd2d0862318ed75c0",
+                "reference": "b714aafa7c6865bcaf8b7e7bd2d0862318ed75c0",
                 "shasum": ""
             },
             "require": {
@@ -27,12 +27,14 @@
                 "phpunit/phpunit": "4.6.*"
             },
             "suggest": {
-                "fastpress/fastpress": "A fast PHP blogging app made with fastpress/Torpedo"
+                "fastpress/fastpress": "A fast PHP blogging app made with fastpress/framework",
+                "fastpress/torpedo": "ultra fast and simple php microframework"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Torpedo\\": "lib"
+                    "Torpedo\\": "src",
+                    "Test\\": "test/src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -46,14 +48,13 @@
                     "role": "Creator / Developer"
                 }
             ],
-            "description": "decoupled libraries for building small application",
-            "homepage": "https://github.com/fastpress/torpedo",
+            "description": "core library for the fastpress/torpedo framework",
+            "homepage": "https://github.com/fastpress/framework",
             "keywords": [
                 "micro framework",
-                "php framework",
-                "php torpedo"
+                "php fastpress"
             ],
-            "time": "2015-10-13 18:32:23"
+            "time": "2015-10-17 02:48:17"
         }
     ],
     "packages-dev": [
@@ -504,16 +505,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "5.0.5",
+            "version": "5.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "65134b2c2e47f48a9afb54a28f67b4d46a2304d1"
+                "reference": "d2656ec378c88e036b3fc14fb4262ee1a25498c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/65134b2c2e47f48a9afb54a28f67b4d46a2304d1",
-                "reference": "65134b2c2e47f48a9afb54a28f67b4d46a2304d1",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/d2656ec378c88e036b3fc14fb4262ee1a25498c9",
+                "reference": "d2656ec378c88e036b3fc14fb4262ee1a25498c9",
                 "shasum": ""
             },
             "require": {
@@ -574,20 +575,20 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-10-12 03:40:23"
+            "time": "2015-10-14 13:51:20"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
-            "version": "3.0.0",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "b66bfd55201aa33e8096d8c9bcb762361521c301"
+                "reference": "3324b035ed1822df22b2c99f2ae22547085eb7a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/b66bfd55201aa33e8096d8c9bcb762361521c301",
-                "reference": "b66bfd55201aa33e8096d8c9bcb762361521c301",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/3324b035ed1822df22b2c99f2ae22547085eb7a8",
+                "reference": "3324b035ed1822df22b2c99f2ae22547085eb7a8",
                 "shasum": ""
             },
             "require": {
@@ -630,7 +631,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2015-10-01 06:43:55"
+            "time": "2015-10-16 12:26:30"
         },
         {
             "name": "sebastian/comparator",
@@ -1098,7 +1099,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "fastpress/torpedo": 20
+        "fastpress/framework": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

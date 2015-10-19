@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- for facebook social media share  -->
+    <meta property="og:image" content="<?= $app['page']['image'] ?>" />
+    <meta property="og:title" content="<?= $app['page']['title'] ?>"/>
+    <meta property="og:description" content="<?= $app['page']['description'] ?>" />
+
+    <meta name="description" content="<?= $app['page']['description'] ?>">
+    <meta name="keywords" content="<?= $app['page']['keywords'] ?>">
+   
+    <link href="<?= $app['assets']['css'] ?>/normalize.css" rel="stylesheet">
+    <link href="<?= $app['assets']['css'] ?>/font-awesome.min.css" rel="stylesheet">
+    <link href="<?= $app['assets']['css'] ?>/app.css" rel="stylesheet">
+
+    <title> <?= $app['page']['title']  ?></title>
+</head>
+<body>
+<!-- this is where you logo, and top navigation bar is contained -->
+<?php if($app['block']['header']): ?>
+    <header>
+        <div class='container'>
+            <div class="logo">
+               <a href="/"><i><b style='color:#0EAFBC' class='fa fa-rocket'> Fastpress</b></i></a> 
+            </div>
+           
+            <div class="links">
+           
+            <?php  $user = $app['session']->get('user'); ?>
+
+            	<?php if(true /*|| $user['is_admin']*/): ?>
+                    <a href="/admin">control</a>  
+                    <a href="/publish"  class="x-mob">publish</a>
+                    <a href="/logout"  class="x-mob">logout</a>
+    			 
+                <?php elseif($user): ?>
+                    <a href="/logout"  class="x-mob">logout</a>
+
+                <?php else: ?> 
+                    <a href="/register">register</a>
+    				<a href="/login" class="x-mob">login</a>
+    			<?php endif; ?>
+            
+            </div> 
+        </div>
+
+    </header>
+<?php endif; ?>
+
+
+
+<section class='container'>
+	<!-- article content -->
+    <?php if($app['block']['content']): ?>
+			<?= $this->content('block.content');   ?>
+	<?php endif; ?>
+
+	<!-- sidebar block and content -->
+	<?php if($app['block']['sidebar']): ?>
+        <aside>
+            <div class='widget about'> 
+                <h3> John Dope </h3>
+                 <img src="<?= $app['assets']['img'] ?>/user.jpg" height='90' width='90' style=''>
+               <p>I’m a freelance web designer and front-end developer with over 7 years of experience designing for the web. Follow me on Twitter here. <p>
+              
+            </div>
+
+           <div class='widget social-tools'>
+                <a href="#"> <span class='fa fa-github fa-2x'></span></a> 
+                <a href="#"><span class='fa fa-stack-overflow fa-2x'></span></a> 
+                <a href="#"><span class='fa fa-twitter fa-2x'></span></a> 
+                <a href="#"><span class='fa fa-linkedin fa-2x'></span></a> 
+            </div>
+
+            <div class='widget articles'> 
+                <b> About me </b>
+                <ul>
+                    <li>twitter</li>
+                     <li>linkin</li>
+                </ul>
+                
+            </div>
+        </aside>
+	<?php endif; ?>
+
+ </section>
+
+<!-- footer -->
+
+<?php if($app['block']['footer']): ?>
+    <footer>
+       <small>powered by <a href="/"><i><b style='color:#0EAFBC'>::Fast</b>press</i></a> </small>
+    </footer>
+<?php endif; ?>
+
+
+
+    <script src="<?= $app['assets']['js'] ?>/prism.js"></script>
+  </body>
+  </html>
+
+
+
+
+
+
+
+
+
+      
+
+
+

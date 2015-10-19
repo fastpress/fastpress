@@ -10,7 +10,7 @@
          stopOnFailure="false"
          stopOnSkipped="false"
          syntaxCheck="false"
-         bootstrap="test/bootstrap.php"
+         bootstrap="vendor/autoload.php"
         >
     <testsuites>
         <testsuite name="Fastpress Tests">
