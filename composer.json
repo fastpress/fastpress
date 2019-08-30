@@ -1,6 +1,6 @@
 {
    "name":"fastpress/fastpress",
-   "description":"fast and simple php blogging application",
+   "description":"Fast, Simple framework",
    "keywords":[
       "php blog",
       "blog app",
@@ -11,12 +11,12 @@
    "authors":[
       {
          "name":"Simon Daniel",
-         "email":"eritr3a@gmail.com",
+         "email":"bountyhub@gmail.com",
          "role":"Creator / Developer"
       }
    ],
    "require":{
-      "php":">=5.6",
+      "php":"^7.0",
       "fastpress/framework":"v0.1.*"
    },
    "config":{
