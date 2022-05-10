@@ -16,7 +16,7 @@
       }
    ],
    "require":{
-      "php":"^7.0",
+      "php":"^8.0",
       "fastpress/framework":"v0.1.*"
    },
    "config":{
